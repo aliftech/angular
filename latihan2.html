@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="App" ng-controller="AppCtrl">
+    <head>
+        <script src="angular.js"></script>
+    </head>
+
+    <body>
+        <p>Nama : <input type="text" ng-model="nama"></p>
+        <h6> {{nama | uppercase}} </h6>
+    </body>
+
+    <script>
+        var app = angular.module('App',[]);
+        app.controller('AppCtrl',function($scope){
+            $scope.nama = "";
+        });
+    </script>
+</html>

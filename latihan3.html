@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="App" ng-controller="ctrlApp">
+    <head>
+        <script src="angular.js"></script>
+    </head>
+    <body>
+        <table width="100%" height="auto">
+            <tr>
+                <th ng-click="urutkan('nama')"> Nama </th>
+                <th ng-click="urutkan('umur')"> Umur </th>
+            </tr>
+            <tr ng-repeat="data in tabel | orderBy:Urutkan">
+                <td> {{data.nama}} </td>
+                <td> {{data.umur}} </td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        var app = angular.module('App',[]);
+        app.controller('ctrlApp',function($scope){
+            $scope.tabel = [
+                {nama:'Wahyu', umur:'22'},
+                {nama:'Krisna', umur:'20'},
+                {nama:'Yuan', umur:'24'},
+                {nama:'Nanda',umur:'21'},
+                {nama:'Hanz', umur:'18'}
+            ];
+            $scope.Urutkan = function(data){
+                $scope.urutkan = data;
+            }
+        });
+    </script>
+</html>

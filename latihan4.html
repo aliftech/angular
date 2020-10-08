@@ -1,0 +1,45 @@
+<html>
+
+
+    <head>
+
+        <title>Latihan 4 :: Routing</title>
+        <script src="angular.js"></script>
+        <script src="angular-route.js"></script>
+
+    </head>
+
+    <body ng-app="myApp">
+        
+        <p><a href="#/!">Main</a></p>
+        <p><a href="#!latihan1">Latihan 1</a></p>
+        <p><a href="#!latihan2">Latihan 2</a></p>
+        <p><a href="#!latihan3">Latihan 3</a></p>
+        
+
+        <div ng-view></div>
+
+        <script>
+
+            var app = angular.module("myApp",["ngRoute"]);
+            app.config(function($routeProvider){
+                $routeProvider.when("/",{
+                    templateUrl:"latihan4.html"
+                })
+                .when("/latihan1",{
+                    templateUrl:"latihan1.html"
+                })
+                .when("/latihan2", {
+                    templateUrl:"latihan2.html"
+                })
+                .when("/latihan3", {
+                    templateUrl:"latihan3.html"
+                })
+    
+            })
+
+        </script>
+
+    </body>
+
+</html>
